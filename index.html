@@ -8,6 +8,9 @@
     <meta name="keywords" content="guardería colindres, guardería treto,guardería cicero ,escuela infantil laredo, guardería laredo, educación infantil cantabria, escuela 0-3 años voto, la cucaña">
     <title>Escuela Infantil La Cucaña | Colindres y Laredo</title>
     
+    <!-- Favicon (Logo en la pestaña) -->
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    
     <!-- Quicksand Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -758,6 +761,13 @@
                         <p class="text-slate-500">Gracias por contactar con La Cucaña. Nos pondremos en contacto contigo lo antes posible.</p>
                         <button onclick="window.location.reload()" class="text-navy font-bold border-b-2 border-navy">Volver al formulario</button>
                     </div>
+                     <!-- Mensaje de Error (Oculto inicialmente) -->
+                    <div id="error-message" class="hidden text-center space-y-4 py-12 animate-fade-in">
+                        <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-4xl mx-auto font-bold">!</div>
+                        <h3 class="text-2xl font-bold text-navy">Hubo un problema</h3>
+                        <p class="text-slate-500">No hemos podido enviar tu mensaje. Por favor, revisa tu conexión o inténtalo más tarde.</p>
+                        <button onclick="window.location.reload()" class="text-navy font-bold border-b-2 border-navy">Intentar de nuevo</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -851,6 +861,7 @@
         const contactForm = document.getElementById('contact-form');
         const formContainer = document.getElementById('contact-form-container');
         const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
         const submitBtn = document.getElementById('submit-btn');
         const btnText = document.getElementById('btn-text');
 
@@ -876,14 +887,15 @@
                     formContainer.classList.add('hidden');
                     successMessage.classList.remove('hidden');
                 } else {
+                    // Si hay error en la respuesta (ej: 400, 500)
                     console.error("Error en el envío");
-                    // Fallback para que el usuario no se quede bloqueado si hay un error de red
                     formContainer.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
+                    errorMessage.classList.remove('hidden');
                 }
             } catch (error) {
+                // Si hay error de red (offline)
                 formContainer.classList.add('hidden');
-                successMessage.classList.remove('hidden');
+                errorMessage.classList.remove('hidden');
             }
         });
 
