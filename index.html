@@ -659,7 +659,7 @@
                             </div>
                             <div class="space-y-2">
                                 <label for="message" class="font-bold text-navy ml-1 text-sm uppercase tracking-wide">Mensaje</label>
-                                <textarea id="message" name="mensaje" rows="3" placeholder="¿Tienes alguna duda específica?" class="w-full bg-white border border-slate-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-navy/20 shadow-sm resize-none"></textarea>
+                                <textarea id="message" name="mensaje" rows="4" required placeholder="Cuéntanos qué necesitas saber." class="w-full bg-white border border-slate-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-navy/20 shadow-sm resize-none"></textarea>
                             </div>
                             <button type="submit" id="submit-btn" class="w-full bg-brand-red hover:bg-red-600 text-white font-bold py-5 rounded-2xl text-lg shadow-lg transition-all transform active:scale-95">
                                 <span id="btn-text">Enviar Solicitud</span>
@@ -674,9 +674,16 @@
                     </div>
                       <div id="error-message" class="hidden text-center space-y-4 py-12 animate-fade-in">
                         <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-4xl mx-auto font-bold">!</div>
-                        <h3 class="text-2xl font-bold text-navy">Hubo un problema</h3>
-                        <p class="text-slate-500">No hemos podido enviar tu mensaje. Por favor, revisa tu conexión o inténtalo más tarde.</p>
-                        <button onclick="window.location.reload()" class="text-navy font-bold border-b-2 border-navy">Intentar de nuevo</button>
+                        <h3 class="text-2xl font-bold text-navy">Hubo un problema técnico</h3>
+                        <div class="text-slate-600 space-y-2">
+                            <p>Lo sentimos, no hemos podido enviar tu mensaje automáticamente.</p>
+                            <p class="font-bold text-brand-red">Por favor, contáctanos directamente:</p>
+                            <div class="flex flex-col gap-1 text-navy font-bold">
+                                <a href="tel:650553817" class="hover:underline">📞 650 55 38 17</a>
+                                <a href="mailto:escuelacucana@gmail.com" class="hover:underline">📧 escuelacucana@gmail.com</a>
+                            </div>
+                        </div>
+                        <button onclick="window.location.reload()" class="mt-4 text-sm text-slate-400 border-b border-slate-300 hover:text-navy transition-colors">Intentar enviar formulario de nuevo</button>
                     </div>
                 </div>
             </div>
