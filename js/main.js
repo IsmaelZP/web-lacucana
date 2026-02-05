@@ -111,6 +111,22 @@ document.querySelectorAll('.carousel-container').forEach(container => {
     setInterval(() => goTo((current + 1) % slides.length), 5000);
 });
 
+// Scroll to Top Button
+const scrollBtn = document.getElementById('scroll-top');
+if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            scrollBtn.classList.remove('translate-y-20', 'opacity-0');
+        } else {
+            scrollBtn.classList.add('translate-y-20', 'opacity-0');
+        }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
 /* // Cookies
 const banner = document.getElementById('cookie-banner');
 if (banner) {
