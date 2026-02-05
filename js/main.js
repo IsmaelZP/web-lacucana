@@ -13,7 +13,21 @@ window.addEventListener('scroll', () => {
 // Mobile menu
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
-menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+// 1. Abrir/Cerrar al pulsar el botón hamburguesa
+if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // 2. NUEVO: Cerrar el menú automáticamente al hacer clic en cualquier enlace
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+}
 
 // Reveal
 const revealElements = document.querySelectorAll('.reveal');
