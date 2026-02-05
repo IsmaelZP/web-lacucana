@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Escuela Infantil y Guardería La Cucaña en Colindres, cerca de Laredo (Cantabria). Educación 0-3 años con metodología activa, huerto propio, comedor saludable y talleres para familias.">
-    <meta name="keywords" content="guardería colindres, guardería treto,guardería cicero ,escuela infantil laredo, guardería laredo, educación infantil cantabria, escuela 0-3 años voto, la cucaña">
-    <title>Escuela Infantil La Cucaña | Colindres y Laredo</title>
+    <title>Próximamente | Escuela Infantil La Cucaña</title>
     
-    <link rel="shortcut icon" href="media/logo.png" type="image/png">
-    
+    <!-- Quicksand Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,12 +25,16 @@
                         sans: ['Quicksand', 'sans-serif'],
                     },
                     animation: {
-                        'bounce-slow': 'bounce 3s infinite',
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                     },
                     keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
                     }
@@ -40,726 +42,89 @@
             }
         }
     </script>
-    
-    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-white text-slate-700 selection:bg-brand-red selection:text-white">
+<!-- Se cambió overflow-hidden por overflow-x-hidden para permitir scroll vertical en móviles pequeños o apaisados -->
+<body class="bg-gradient-to-b from-blue-50 to-white min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 text-slate-700 relative overflow-x-hidden">
 
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-[100] transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="h-12 w-12 lg:h-14 lg:w-14 relative">
-                     <img src="media/logo.png" onerror="this.src='https://via.placeholder.com/150x150?text=LC'" alt="Logo La Cucaña" class="h-full object-contain group-hover:scale-105 transition-transform">
-                </div>
-                <span class="text-xl lg:text-2xl font-bold text-navy tracking-tight hidden sm:block group-hover:text-brand-red transition-colors">La Cucaña</span>
-            </a>
+    <!-- Elementos decorativos de fondo (ondas sutiles) -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-30 pointer-events-none">
+        <div class="absolute -top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-blue-200/50 rounded-full blur-3xl mix-blend-multiply animate-pulse"></div>
+        <div class="absolute top-1/2 -right-20 w-64 h-64 sm:w-80 sm:h-80 bg-red-100/50 rounded-full blur-3xl mix-blend-multiply animate-pulse delay-700"></div>
+    </div>
 
-            <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
-                <a href="#nosotros" class="text-navy font-bold hover:text-brand-red transition-colors text-sm uppercase tracking-wide">Sobre Nosotros</a>
-                <a href="#metodologia" class="text-navy font-bold hover:text-brand-red transition-colors text-sm uppercase tracking-wide">Metodología</a>
-                <a href="#actividades" class="text-navy font-bold hover:text-brand-red transition-colors text-sm uppercase tracking-wide">Actividades</a>
-                <a href="#servicios" class="text-navy font-bold hover:text-brand-red transition-colors text-sm uppercase tracking-wide">Instalaciones</a>
-                <a href="#faq" class="text-navy font-bold hover:text-brand-red transition-colors text-sm uppercase tracking-wide">FAQ</a>
-                <a href="#contacto" class="bg-brand-red hover:bg-red-600 text-white px-5 py-2 rounded-full font-bold shadow-md shadow-red-200 transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2 text-sm">
-                    <span>Solicitar Plaza</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
-            </nav>
-
-            <button id="menu-toggle" aria-label="Abrir menú" class="lg:hidden text-navy p-2 hover:bg-blue-50 rounded-lg transition-colors">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-2xl p-8 flex flex-col gap-6 text-center animate-in slide-in-from-top duration-300">
-            <a href="#nosotros" class="text-xl text-navy font-bold py-2 border-b border-slate-100">Sobre Nosotros</a>
-            <a href="#metodologia" class="text-xl text-navy font-bold py-2 border-b border-slate-100">Metodología</a>
-            <a href="#actividades" class="text-xl text-navy font-bold py-2 border-b border-slate-100">Actividades</a>
-            <a href="#servicios" class="text-xl text-navy font-bold py-2 border-b border-slate-100">Instalaciones</a>
-            <a href="#faq" class="text-xl text-navy font-bold py-2 border-b border-slate-100">FAQ</a>
-            <a href="#contacto" class="bg-brand-red text-white py-4 rounded-2xl font-bold text-lg shadow-xl hover:bg-red-600 transition-colors">Solicitar Información</a>
-        </div>
-    </header>
-
-    <section class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-blue-50 to-white pt-28 pb-20 lg:pt-0 lg:pb-0">
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8 reveal relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100/50 text-navy rounded-full font-bold text-xs uppercase tracking-widest border border-blue-200">
-                    <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-                    Matrícula Abierta
-                </div>
-                <h1 class="text-5xl md:text-6xl xl:text-7xl font-extrabold text-navy leading-[1.1]">
-                    Navegando juntos en sus <span class="text-brand-red relative whitespace-nowrap">
-                        primeros pasos
-                        <svg class="absolute w-full h-3 -bottom-1 left-0 text-blue-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none"/></svg>
-                    </span>
-                </h1>
-                <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg">
-                    En La Cucaña de Colindres, cada niño es el capitán de su propio aprendizaje. Un entorno seguro, familiar y con la brisa del mar Cantábrico.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#contacto" class="bg-navy text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl shadow-blue-200 transition-all hover:-translate-y-1 hover:bg-blue-900 text-center flex justify-center items-center gap-3">
-                        <span>Reservar Cita</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    </a>
-                    <a href="#nosotros" class="group px-8 py-4 rounded-2xl text-lg font-bold text-navy border-2 border-navy hover:bg-navy hover:text-white transition-all text-center">
-                        Nuestra Historia
-                    </a>
-                </div>
-            </div>
-
-            <div class="relative reveal delay-200">
-                <div class="relative z-0 rounded-[3rem] overflow-hidden shadow-2xl aspect-square border-8 border-white group">
-                    <video autoplay muted loop playsinline class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000">
-                        <source src="media/intro.mp4" type="video/mp4">
-                        Tu navegador no soporta video HTML5.
-                    </video>
-                </div>
-                <div class="absolute top-10 -right-4 lg:-right-10 z-[-1] w-32 h-32 bg-brand-red/10 rounded-full blur-3xl"></div>
-            </div>
-        </div>
+    <!-- Contenido Principal -->
+    <main class="max-w-4xl w-full text-center space-y-6 sm:space-y-8 animate-fade-in-up my-auto py-8 sm:py-0">
         
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-12 md:h-16 text-white fill-current">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.43,130.34,124.76,192.39,110.15c44.15-10.37,84.45-31.12,129-53.71Z"></path>
-            </svg>
+        <!-- Logo con animación suave y tamaño responsive -->
+        <div class="relative inline-block group mb-2 sm:mb-4">
+            <div class="absolute inset-0 bg-white/50 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
+            <!-- Ajuste de tamaños: w-32 en móvil, w-40 en tablet, w-56 en escritorio -->
+            <img src="logo.png" onerror="this.src='https://via.placeholder.com/200x200?text=LC'" alt="Logo La Cucaña" class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 object-contain mx-auto animate-float drop-shadow-xl">
         </div>
-    </section>
 
-    <section id="nosotros" class="section-padding bg-white waves-bg">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                <div class="reveal relative order-2 lg:order-1">
-                    <div class="absolute inset-0 bg-navy/5 rounded-[3.5rem] rotate-6 transform"></div>
-                    <img src="media/educadora.png" loading="lazy" alt="Educadora con niños" class="relative rounded-[3.5rem] shadow-2xl shadow-blue-900/10 z-10">
-                </div>
-                <div class="space-y-8 reveal order-1 lg:order-2">
-                    <div class="space-y-4">
-                        <span class="text-brand-red font-bold uppercase tracking-widest text-sm">Nuestra Esencia</span>
-                        <h2 class="text-4xl md:text-5xl font-bold text-navy">Dos décadas criando futuro</h2>
-                    </div>
-                    <p class="text-xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-brand-red pl-6">
-                        "La Cucaña nació hace más de 25 años con una misión clara: ser el segundo hogar para los más pequeños del pueblo."
-                    </p>
-                    <div class="prose text-slate-500 leading-relaxed">
-                        <p>
-                            Fundada por vocación familiar, nuestra escuela ha visto crecer a generaciones de colindreses. Somos especialistas en el <strong>primer ciclo de educación infantil (0-3 años)</strong>, ofreciendo un entorno seguro, luminoso y lleno de cariño.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-6 pt-4">
-                        <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 text-center hover:bg-blue-50 transition-colors">
-                            <p class="text-4xl font-extrabold text-navy">25+</p>
-                            <p class="font-medium text-slate-500 text-sm mt-1">Años de experiencia</p>
-                        </div>
-                        <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 text-center hover:bg-blue-50 transition-colors">
-                            <p class="text-4xl font-extrabold text-navy">1000+</p>
-                            <p class="font-medium text-slate-500 text-sm mt-1">Alumnos felices</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Textos Responsive -->
+        <div class="space-y-3 sm:space-y-4 px-2">
+            <span class="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-brand-red/10 text-brand-red font-bold text-xs sm:text-sm tracking-widest uppercase border border-brand-red/20">
+                En Construcción
+            </span>
+            <!-- Tipografía ajustada: 3xl en móvil -> 6xl en escritorio -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-navy tracking-tight leading-tight">
+                Estamos preparando algo <span class="text-brand-red">maravilloso</span>
+            </h1>
+            <p class="text-base sm:text-xl text-slate-600 leading-relaxed max-w-lg mx-auto">
+                La nueva web de la <strong>Escuela Infantil La Cucaña</strong> está casi lista. Muy pronto podrás descubrir nuestro nuevo espacio digital.
+            </p>
         </div>
-    </section>
 
-    <section id="metodologia" class="section-padding bg-white relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 space-y-6 reveal">
-                <span class="text-brand-red font-bold uppercase tracking-widest text-sm">Cómo trabajamos</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-navy">Metodología Educativa</h2>
-                <p class="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                    Un proyecto basado en el <span class="text-navy font-semibold">Aprendizaje Activo</span>.
-                </p>
+        <!-- Tarjeta de Contacto Rápido Responsive -->
+        <!-- Padding ajustado: p-6 en móvil -> p-8 en escritorio -->
+        <div class="mt-8 sm:mt-12 bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-xl border border-white/50 mx-auto max-w-3xl">
+            <p class="text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-wide mb-4 sm:mb-6">Mientras tanto, contáctanos aquí</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-left">
+                <!-- Teléfono -->
+                <a href="tel:650553817" class="flex flex-row md:flex-col items-center p-3 sm:p-4 rounded-2xl hover:bg-blue-50 transition-colors group text-left md:text-center gap-4 md:gap-0">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-navy rounded-xl flex items-center justify-center text-xl sm:text-2xl md:mb-3 group-hover:scale-110 transition-transform shrink-0">📞</div>
+                    <div>
+                        <span class="block font-bold text-navy text-sm sm:text-base">Llámanos</span>
+                        <span class="block text-xs sm:text-sm text-slate-500">650 55 38 17</span>
+                    </div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:escuelacucana@gmail.com" class="flex flex-row md:flex-col items-center p-3 sm:p-4 rounded-2xl hover:bg-blue-50 transition-colors group text-left md:text-center gap-4 md:gap-0">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-navy rounded-xl flex items-center justify-center text-xl sm:text-2xl md:mb-3 group-hover:scale-110 transition-transform shrink-0">📧</div>
+                    <div class="min-w-0"> <!-- min-w-0 evita que el email rompa el layout en móviles muy estrechos -->
+                        <span class="block font-bold text-navy text-sm sm:text-base">Escríbenos</span>
+                        <span class="block text-xs sm:text-sm text-slate-500 truncate">escuelacucana@gmail.com</span>
+                    </div>
+                </a>
+
+                <!-- Ubicación -->
+                <a href="https://maps.google.com/?q=C.+el+Carmen,+16,+39750+Colindres" target="_blank" class="flex flex-row md:flex-col items-center p-3 sm:p-4 rounded-2xl hover:bg-blue-50 transition-colors group text-left md:text-center gap-4 md:gap-0 sm:col-span-2 md:col-span-1">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-navy rounded-xl flex items-center justify-center text-xl sm:text-2xl md:mb-3 group-hover:scale-110 transition-transform shrink-0">📍</div>
+                    <div>
+                        <span class="block font-bold text-navy text-sm sm:text-base">Visítanos</span>
+                        <span class="block text-xs sm:text-sm text-slate-500">C. el Carmen, 16, 39750 Colindres</span>
+                    </div>
+                </a>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group reveal border border-slate-100 text-center">
-                    <div class="w-16 h-16 bg-blue-50 text-navy rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy group-hover:text-white transition-colors duration-300 text-4xl mx-auto">
-                        <span>🧩</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy mb-3">Estimulación Temprana</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Desarrollo cognitivo y motor en las etapas críticas de crecimiento.</p>
-                </div>
-                
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group reveal delay-100 border border-slate-100 text-center">
-                    <div class="w-16 h-16 bg-blue-50 text-navy rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy group-hover:text-white transition-colors duration-300 mx-auto">
-                        <svg class="w-10 h-10 drop-shadow-sm" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#012169" d="M0 0h640v480H0z"/>
-                            <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-                            <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-                            <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-                            <path fill="#C8102E" d="M0 192v96h640v-96H0zM273 0v480h96V0h-96z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy mb-3">English Time</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Introducción natural al inglés a través de canciones y juegos diarios.</p>
-                </div>
-
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group reveal delay-200 border border-slate-100 text-center">
-                    <div class="w-16 h-16 bg-blue-50 text-navy rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy group-hover:text-white transition-colors duration-300 text-4xl mx-auto">
-                        <span>❤️</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy mb-3">Gestión Emocional</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Acompañamiento respetuoso para identificar y gestionar emociones.</p>
-                </div>
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group reveal delay-300 border border-slate-100 text-center">
-                    <div class="w-16 h-16 bg-blue-50 text-navy rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy group-hover:text-white transition-colors duration-300 text-4xl mx-auto">
-                        <span>🌳</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy mb-3">Entorno Natural</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Salidas y actividades integradas con nuestra identidad local.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="actividades" class="section-padding bg-slate-50 relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row gap-12 items-center mb-16 reveal">
-                <div class="lg:w-1/2 space-y-6">
-                    <span class="text-brand-red font-bold uppercase tracking-widest text-sm">Aprender Tocando</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-navy">El Laboratorio de los Sentidos</h2>
-                    <p class="text-lg text-slate-600 leading-relaxed">
-                        En La Cucaña creemos que "tocar es aprender". Organizamos talleres semanales donde los niños experimentan con nuevas texturas, temperaturas y materiales, fomentando su curiosidad natural.
-                    </p>
-                </div>
-                <div class="hidden lg:block lg:w-1/2">
-                    <div class="w-full h-1 bg-slate-200 rounded-full"></div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="group reveal rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
-                    <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
-                        <h3 class="text-white text-2xl font-bold mb-2">Frío y Calor</h3>
-                        <p class="text-blue-100 text-sm">
-                            Experimentamos con bloques de hielo y agua templada. Descubrimos los cambios de estado del agua.
-                        </p>
-                    </div>
-                    
-                    <div class="carousel-container relative w-full h-full">
-                        <div class="carousel-slides relative w-full h-full">
-                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                        </div>
-                        <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
-                    </div>
-                </div>
-
-                <div class="group reveal delay-100 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
-                     <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
-                        <h3 class="text-white text-2xl font-bold mb-2">Camino Sensorial</h3>
-                        <p class="text-blue-100 text-sm">
-                            Pies descalzos sobre césped, arena y madera. Estimulamos el equilibrio y la propiocepción.
-                        </p>
-                    </div>
-                    
-                    <div class="carousel-container relative w-full h-full">
-                        <div class="carousel-slides relative w-full h-full">
-                            <img src="media/camino1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/camino2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/camino3.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                        </div>
-                        <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
-                    </div>
-                </div>
-
-                <div class="group reveal delay-200 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
-                     <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
-                        <h3 class="text-white text-2xl font-bold mb-2">Arte y Texturas</h3>
-                        <p class="text-blue-100 text-sm">
-                            Pintura de dedos, harina y pan rallado. Exploramos texturas pringosas y divertidas.
-                        </p>
-                    </div>
-                    
-                    <div class="carousel-container relative w-full h-full">
-                        <div class="carousel-slides relative w-full h-full">
-                            <img src="media/arte1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/arte3.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/arte4.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                        </div>
-                        <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-16 text-center reveal">
-                <div class="bg-white rounded-[2rem] p-8 md:p-10 shadow-lg border border-slate-100 inline-block max-w-2xl w-full relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-50"></div>
-                    <div class="relative z-10">
-                        <h3 class="text-xl md:text-2xl font-bold text-navy mb-2">📸 ¡No te pierdas nuestro día a día!</h3>
-                        <p class="text-slate-600 mb-6">Síguenos para ver más fotos de las actividades, menús semanales y momentos especiales.</p>
-                        <div class="flex justify-center gap-4">
-                            <a href="https://www.instagram.com/lacucanacolindres/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-gradient-to-br from-purple-600 to-pink-500 text-white px-6 py-3 rounded-full font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                                Instagram
-                            </a>
-                            <a href="https://www.facebook.com/lacucanaescuela/?locale=es_ES" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-[#1877F2] text-white px-6 py-3 rounded-full font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                                Facebook
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicios" class="section-padding bg-soft-blue relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20 space-y-6 reveal">
-                <span class="text-brand-red font-bold uppercase tracking-widest text-sm">Qué ofrecemos</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-navy">Instalaciones y Servicios</h2>
-                <div class="w-20 h-1.5 bg-brand-red mx-auto rounded-full"></div>
-            </div>
-
-            <div class="space-y-24">
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                    <div class="relative order-2 lg:order-1 group">
-                        <div class="absolute inset-0 bg-brand-red/5 rounded-[3rem] -rotate-3 transform translate-y-4"></div>
-                        <div class="carousel-container relative rounded-[3rem] shadow-xl w-full h-80 lg:h-96 overflow-hidden bg-white">
-                            <div class="carousel-slides relative w-full h-full">
-                                <img src="media/patio1.png" alt="Huerto" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                                <img src="media/huerto2.png" alt="Huerto 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                                <img src="media/patio.png" alt="Patio" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            </div>
-                            <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20"></div>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2 space-y-6">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-red shadow-sm text-3xl">🌱</div>
-                        <h3 class="text-3xl font-bold text-navy">Patio Soleado con Huerta</h3>
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            Un espacio exterior único en Colindres donde conectamos con la tierra. Los niños aprenden de dónde vienen los alimentos <strong>cuidando la huerta</strong> y nuestros <strong>árboles frutales (perales y manzanos)</strong>, llegando incluso a <strong>recoger la fruta ellos mismos</strong>.
-                        </p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-slate-600">
-                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Contacto directo con la naturaleza
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-600">
-                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Zona de juegos segura
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                    <div class="order-1 lg:order-1 space-y-6">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-red shadow-sm text-3xl">🩺</div>
-                        <h3 class="text-3xl font-bold text-navy">Escuela Segura</h3>
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            La tranquilidad de las familias es nuestra prioridad. Ofrecemos talleres de primeros auxilios y formación específica impartida por una <strong>enfermera especialista en urgencias</strong>, garantizando un entorno preparado para cualquier eventualidad.
-                        </p>
-                         <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-slate-600">
-                                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Protocolos de seguridad actualizados
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-600">
-                                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Formación para familias y personal
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="relative order-2 lg:order-2 group">
-                         <div class="absolute inset-0 bg-navy/5 rounded-[3rem] rotate-3 transform translate-y-4"></div>
-                        <div class="carousel-container relative rounded-[3rem] shadow-xl w-full h-80 lg:h-96 overflow-hidden bg-white">
-                            <div class="carousel-slides relative w-full h-full">
-                                <img src="media/curso.png" alt="Curso" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                                <img src="media/curso2.png" alt="Curso 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            </div>
-                            <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                    <div class="relative order-2 lg:order-1 group">
-                         <div class="absolute inset-0 bg-orange-100/50 rounded-[3rem] -rotate-3 transform translate-y-4"></div>
-                        <div class="carousel-container relative rounded-[3rem] shadow-xl w-full h-80 lg:h-96 overflow-hidden bg-white">
-                            <div class="carousel-slides relative w-full h-full">
-                                <img src="media/comida.png" alt="Comida" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                                <img src="media/comida2.png" alt="Comida 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                                <img src="media/comida3.png" alt="Comida 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            </div>
-                            <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20"></div>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2 space-y-6">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-red shadow-sm text-3xl">🍎</div>
-                        <h3 class="text-3xl font-bold text-navy">Alimentación Saludable</h3>
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            Servicio de catering especializado con menús equilibrados y vigilancia estricta de alergias. Además, informamos diariamente a las familias sobre el menú a través de nuestra <strong>Agenda Digital</strong>.
-                        </p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-slate-600">
-                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Menús adaptados por nutricionistas
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-600">
-                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Atención a alergias alimentarias
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section id="instalaciones" class="section-padding bg-slate-50">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8 reveal">
-                <div class="space-y-4">
-                    <h2 class="text-4xl md:text-5xl font-bold text-navy">Nuestras Aulas</h2>
-                    <p class="text-xl text-slate-500 max-w-xl">Espacios luminosos diseñados para la seguridad y el juego.</p>
-                </div>
-                <div class="shrink-0 hidden md:block">
-                    <a href="#contacto" class="inline-block bg-white text-navy border-2 border-navy px-8 py-3 rounded-full font-bold hover:bg-navy hover:text-white transition-all shadow-md">
-                        Agendar Visita
-                    </a>
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="group reveal rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-80 relative">
-                     <div class="absolute inset-0 pointer-events-none z-30 flex items-end p-8 bg-gradient-to-t from-navy/80 via-transparent to-transparent">
-                        <div>
-                            <span class="block text-brand-red font-bold text-sm mb-1 uppercase tracking-wider">0-1 Años</span>
-                            <span class="text-white text-2xl font-bold">Aula Bebés</span>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-container relative w-full h-full">
-                        <div class="carousel-slides relative w-full h-full">
-                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                        </div>
-                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
-                    </div>
-                </div>
-
-                <div class="group reveal delay-100 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-80 relative">
-                     <div class="absolute inset-0 pointer-events-none z-30 flex items-end p-8 bg-gradient-to-t from-navy/80 via-transparent to-transparent">
-                        <div>
-                            <span class="block text-brand-red font-bold text-sm mb-1 uppercase tracking-wider">1-2 Años</span>
-                            <span class="text-white text-2xl font-bold">Exploradores</span>
-                        </div>
-                    </div>
-                    <div class="carousel-container relative w-full h-full">
-                        <div class="carousel-slides relative w-full h-full">
-                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                        </div>
-                        <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
-                    </div>
-                </div>
-
-                <div class="group reveal delay-200 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-80 relative">
-                     <div class="absolute inset-0 pointer-events-none z-30 flex items-end p-8 bg-gradient-to-t from-navy/80 via-transparent to-transparent">
-                        <div>
-                            <span class="block text-brand-red font-bold text-sm mb-1 uppercase tracking-wider">2-3 Años</span>
-                            <span class="text-white text-2xl font-bold">Capitanes</span>
-                        </div>
-                    </div>
-                    <div class="carousel-container relative w-full h-full">
-                        <div class="carousel-slides relative w-full h-full">
-                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                        </div>
-                        <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <section id="faq" class="section-padding bg-white waves-bg">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="text-center mb-12 space-y-4 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold text-navy">Preguntas Frecuentes</h2>
-                <div class="w-20 h-1.5 bg-brand-red mx-auto rounded-full"></div>
-            </div>
-
-            <div class="space-y-6">
-                <div class="faq-item border border-slate-200 bg-white shadow-sm hover:shadow-md rounded-3xl overflow-hidden p-8 reveal">
-                    <h3 class="text-xl md:text-2xl font-bold text-navy mb-4">¿Cuáles son los horarios de la escuela?</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg">
-                        Nuestra escuela ofrece un horario flexible. Abrimos de <strong>07:30 a 17:00</strong> de lunes a viernes, con posibilidad de entrada y salida escalonada según el plan familiar elegido.
-                    </p>
-                </div>
-
-                <div class="faq-item border border-slate-200 bg-white shadow-sm hover:shadow-md rounded-3xl overflow-hidden p-8 reveal delay-100">
-                    <h3 class="text-xl md:text-2xl font-bold text-navy mb-4">¿Disponéis de servicio de comedor?</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg">
-                        Sí, ofrecemos servicio de comedor a través de un <strong>catering especializado</strong> en nutrición infantil. Los menús son equilibrados y se adaptan estrictamente a cualquier alergia o intolerancia comunicada.
-                    </p>
-                </div>
-
-                <div class="faq-item border border-slate-200 bg-white shadow-sm hover:shadow-md rounded-3xl overflow-hidden p-8 reveal delay-200">
-                    <h3 class="text-xl md:text-2xl font-bold text-navy mb-4">¿Cómo es el periodo de adaptación?</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg">
-                        Es totalmente personalizado. Realizamos una entrada progresiva, donde los tiempos se amplían según el bienestar del niño/a. Tú eres parte del proceso y estaremos en contacto continuo.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonios" class="section-padding bg-soft-blue relative overflow-hidden">
-        <div class="container mx-auto px-6 max-w-4xl relative z-10">
-            <div class="text-center mb-16 space-y-4 reveal">
-                <span class="text-brand-red font-bold uppercase tracking-widest text-sm">Testimonios</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-navy">Familias Felices</h2>
-                <div class="w-20 h-1.5 bg-brand-red mx-auto rounded-full"></div>
-            </div>
-
-            <div class="carousel-container relative h-72 md:h-64 reveal rounded-[2.5rem] bg-white shadow-xl border border-slate-100 p-8 md:p-12 overflow-hidden">
-                <div class="carousel-slides relative w-full h-full">
-                    <div class="carousel-slide absolute inset-0 flex flex-col justify-center items-center text-center p-6 opacity-100 z-10">
-                        <div class="flex gap-1 text-yellow-400 mb-4">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
-                        <p class="text-xl md:text-2xl text-slate-700 font-medium italic mb-6">"Maravillosas profesionales y sitio con luz y ventanales excepcional. Muy recomendable."</p>
-                        <p class="font-bold text-navy uppercase tracking-wide text-sm">- E. A. -</p>
-                    </div>
-                    <div class="carousel-slide absolute inset-0 flex flex-col justify-center items-center text-center p-6 opacity-0">
-                         <div class="flex gap-1 text-yellow-400 mb-4">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
-                        <p class="text-xl md:text-2xl text-slate-700 font-medium italic mb-6">"Estamos encantados. Muy respetuosas y actuales. Nuestra niña no podría estar en mejores manos."</p>
-                        <p class="font-bold text-navy uppercase tracking-wide text-sm">- P.M. -</p>
-                    </div>
-                    <div class="carousel-slide absolute inset-0 flex flex-col justify-center items-center text-center p-6 opacity-0">
-                         <div class="flex gap-1 text-yellow-400 mb-4">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
-                        <p class="text-xl md:text-2xl text-slate-700 font-medium italic mb-6">"Muy agradecida siempre con el trato dado tanto a mi hijo como a nosotros como padres, la mejor guardería muchas gracias ❤️."</p>
-                        <p class="font-bold text-navy uppercase tracking-wide text-sm">- Y.M. -</p>
-                    </div>
-                </div>
-                <div class="carousel-dots absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20"></div>
-            </div>
-
-            <div class="mt-10 reveal delay-200 flex flex-col items-center">
-                 <div class="bg-white border border-slate-200 rounded-2xl px-8 py-4 shadow-sm flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-bold text-navy">4.7</span>
-                    <div class="flex flex-col">
-                        <div class="flex text-yellow-400 mb-1">
-                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5" viewBox="0 0 24 24">
-                                <defs>
-                                    <linearGradient id="grad1">
-                                        <stop offset="70%" stop-color="currentColor"/>
-                                        <stop offset="70%" stop-color="#cbd5e1"/> </linearGradient>
-                                </defs>
-                                <path fill="url(#grad1)" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                            </svg>
-                        </div>
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Excelencia Educativa</span>
-                    </div>
-                 </div>
-
-                <a href="https://www.google.com/search?q=escuela+infantil+la+cucaña+reseñas" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-navy font-bold hover:text-brand-red transition-colors group">
-                    <svg class="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                    </svg>
-                    <span class="border-b-2 border-transparent group-hover:border-brand-red transition-all">Leer todas las reseñas en Google</span>
+            <!-- Redes Sociales -->
+            <div class="flex justify-center gap-4 mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-100">
+                <a href="https://www.facebook.com/lacucanaescuela/?locale=es_ES" target="_blank" class="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center hover:bg-brand-red transition-colors shadow-md transform hover:scale-110">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/lacucanacolindres/" target="_blank" class="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center hover:bg-brand-red transition-colors shadow-md transform hover:scale-110">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path></svg>
                 </a>
             </div>
         </div>
-    </section>
 
-    <section id="contacto" class="section-padding bg-white waves-bg relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
-                <div class="space-y-10 reveal">
-                    <div class="space-y-4">
-                        <span class="text-brand-red font-bold uppercase tracking-widest text-sm">Matriculación</span>
-                        <h2 class="text-4xl md:text-5xl font-bold text-navy">¡Sube a bordo!</h2>
-                        <p class="text-lg text-slate-500">Ven a conocernos a C. el Carmen. Estaremos encantados de enseñarte nuestras instalaciones.</p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-6 group">
-                            <div class="w-14 h-14 bg-white rounded-2xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm">📍</div>
-                            <div>
-                                <h4 class="font-bold text-navy text-lg">Ubicación</h4>
-                                <p class="text-slate-500">C. el Carmen, 16, 39750 Colindres</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-6 group">
-                            <div class="w-14 h-14 bg-white rounded-2xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm shrink-0">📞</div>
-                            
-                            <div class="flex flex-col justify-center">
-                                <h4 class="font-bold text-navy text-lg">Llámanos</h4>
-                                
-                                <div class="flex items-center gap-3 mt-1 flex-wrap">
-                                    <a href="tel:650553817" class="text-slate-500 font-bold hover:text-brand-red transition-colors whitespace-nowrap">
-                                        650 55 38 17
-                                    </a>
-
-                                    <span class="text-slate-300 text-sm">o</span>
-
-                                    <a href="https://wa.me/34650553817?text=Hola,%20quisiera%20información%20sobre%20la%20escuela" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 bg-[#25D366] hover:bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold transition-all shadow-sm whitespace-nowrap group-hover:scale-105">
-                                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.903.952 3.195.952 3.179 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.769-5.766-5.769l-.39.034zm6.274 6.3c-.029 1.488-.503 2.531-1.306 3.328-1.259 1.214-3.551 1.393-4.896.223-2.189-1.925-3.328-4.321-2.924-6.381.189-.968.966-1.727 1.776-1.745l.231.006c.264 0 .48.163.568.411.233.655.707 2.03.743 2.126.04.108.019.267-.099.412l-.372.45c-.145.174-.131.334.09.689.176.286.721 1.055 1.576 1.802.502.438.938.56 1.157.576.214.017.371-.129.539-.33.199-.239.508-.71.642-.727.118-.013.292.057.492.148.47.214 1.564.717 1.625.766.06.048.118.156.129.356z"/></svg>
-                                        WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-6 group">
-                            <div class="w-14 h-14 bg-white rounded-2xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm">📧</div>
-                            <div>
-                                <h4 class="font-bold text-navy text-lg">Escríbenos</h4>
-                                <a href="mailto:escuelacucana@gmail.com" class="text-slate-500 font-bold hover:text-brand-red transition-colors">escuelacucana@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="w-full h-64 rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 mt-6 reveal">
-                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.2078652391054!2d-3.4501438234293046!3d43.39356617111516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4947970876176b%3A0xe37c95a639686e06!2sC.%20el%20Carmen%2C%2016%2C%2039750%20Colindres%2C%20Cantabria!5e0!3m2!1ses!2ses!4v1716120000000!5m2!1ses!2ses" 
-                                width="100%" 
-                                height="100%" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="Mapa de ubicación La Cucaña">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-50 p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100 reveal delay-200">
-                    <div id="contact-form-container">
-                        <form id="contact-form" class="space-y-6">
-                            <div class="space-y-2">
-                                <label for="name" class="font-bold text-navy ml-1 text-sm uppercase tracking-wide">Nombre tutor/a <span class="text-brand-red">*</span></label>
-                                <input type="text" id="name" name="nombre" required placeholder="Ej. Marcos" class="w-full bg-white border border-slate-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-navy/20 shadow-sm">
-                            </div>
-                            <div class="space-y-2">
-                                <label for="email" class="font-bold text-navy ml-1 text-sm uppercase tracking-wide">Correo <span class="text-brand-red">*</span></label>
-                                <input type="email" id="email" name="email" required placeholder="hola@ejemplo.com" class="w-full bg-white border border-slate-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-navy/20 shadow-sm">
-                            </div>
-                             <div class="space-y-2">
-                                <label for="phone" class="font-bold text-navy ml-1 text-sm uppercase tracking-wide">Teléfono</label>
-                                <input type="tel" id="phone" name="telefono" placeholder="600 000 000" class="w-full bg-white border border-slate-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-navy/20 shadow-sm">
-                            </div>
-                            <div class="space-y-2">
-                                <label for="age" class="font-bold text-navy ml-1 text-sm uppercase tracking-wide">Edad del pequeño/a</label>
-                                <select id="age" name="edad" class="w-full bg-white border border-slate-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-navy/20 shadow-sm">
-                                    <option value="0-1">0-1 años</option>
-                                    <option value="1-2">1-2 años</option>
-                                    <option value="2-3">2-3 años</option>
-                                </select>
-                            </div>
-                            <div class="space-y-2">
-                                <label for="message" class="font-bold text-navy ml-1 text-sm uppercase tracking-wide">Mensaje <span class="text-brand-red">*</span></label>
-                                <textarea id="message" name="mensaje" rows="4" required placeholder="Cuéntanos qué necesitas saber." class="w-full bg-white border border-slate-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-navy/20 shadow-sm resize-none"></textarea>
-                            </div>
-                            <button type="submit" id="submit-btn" class="w-full bg-brand-red hover:bg-red-600 text-white font-bold py-5 rounded-2xl text-lg shadow-lg transition-all transform active:scale-95">
-                                <span id="btn-text">Enviar Solicitud</span>
-                            </button>
-                        </form>
-                        <p class="text-xs text-slate-400 mt-4 ml-1 italic">* Campos obligatorios</p>
-                    </div>
-                    <div id="success-message" class="hidden text-center space-y-4 py-12 animate-fade-in">
-                        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto italic">✓</div>
-                        <h3 class="text-2xl font-bold text-navy">¡Enviado con éxito!</h3>
-                        <p class="text-slate-500">Gracias por contactar con La Cucaña. Nos pondremos en contacto contigo lo antes posible.</p>
-                        <button onclick="window.location.reload()" class="text-navy font-bold border-b-2 border-navy">Volver al formulario</button>
-                    </div>
-                      <div id="error-message" class="hidden text-center space-y-4 py-12 animate-fade-in">
-                        <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-4xl mx-auto font-bold">!</div>
-                        <h3 class="text-2xl font-bold text-navy">Hubo un problema técnico</h3>
-                        <div class="text-slate-600 space-y-2">
-                            <p>Lo sentimos, no hemos podido enviar tu mensaje automáticamente.</p>
-                            <p class="font-bold text-brand-red">Por favor, contáctanos directamente:</p>
-                            <div class="flex flex-col gap-1 text-navy font-bold">
-                                <a href="tel:650553817" class="hover:underline">📞 650 55 38 17</a>
-                                <a href="mailto:escuelacucana@gmail.com" class="hover:underline">📧 escuelacucana@gmail.com</a>
-                            </div>
-                        </div>
-                        <button onclick="window.location.reload()" class="mt-4 text-sm text-slate-400 border-b border-slate-300 hover:text-navy transition-colors">Intentar enviar formulario de nuevo</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <button id="scroll-top" aria-label="Volver arriba" class="fixed bottom-6 right-6 z-40 bg-navy text-white p-3 rounded-full shadow-lg translate-y-20 opacity-0 transition-all duration-300 hover:bg-brand-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-        </button>
-
-        <footer class="bg-navy text-white pt-20 pb-10">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-16 pb-16 border-b border-white/10">
-                <div class="space-y-6">
-                    <div class="flex items-center gap-3">
-                         <div class="h-24 w-auto bg-white rounded-xl p-2 inline-block">
-                             <img src="media/logo.png" onerror="this.src='https://via.placeholder.com/150x150?text=LC'" alt="Logo La Cucaña" class="h-full w-auto object-contain">
-                         </div>
-                    </div>
-                    <p class="text-blue-100/70 text-base leading-relaxed max-w-sm">Vuestro segundo hogar en Colindres. Educando con el corazón y profesionalidad bajo la brisa del mar.</p>
-                </div>
-                <div class="space-y-6">
-                    <h4 class="text-lg font-bold text-blue-100">Enlaces Rápidos</h4>
-                    <ul class="space-y-3 text-blue-100/60 font-medium">
-                        <li><a href="#nosotros" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Sobre Nosotros</a></li>
-                        <li><a href="#metodologia" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Metodología</a></li>
-                        <li><a href="#servicios" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Instalaciones</a></li>
-                        <li><a href="#faq" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Preguntas Frecuentes</a></li>
-                        <li><a href="#contacto" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="space-y-6">
-                    <h4 class="text-lg font-bold text-blue-100">Síguenos</h4>
-                    <div class="flex gap-3">
-                        <a href="https://www.facebook.com/lacucanaescuela/?locale=es_ES" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-brand-red hover:text-white transition-all text-blue-100">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
-                        </a>
-                        <a href="https://www.instagram.com/lacucanacolindres/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-brand-red hover:text-white transition-all text-blue-100">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-8 text-center text-blue-100/40 text-xs font-medium tracking-wider uppercase flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>© 2025 Escuela Infantil La Cucaña. Todos los derechos reservados.</p>
-                <p>Hecho con ❤️ en Cantabria</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-
-    <script defer src="/_vercel/insights/script.js"></script>
-
+        <footer class="text-slate-400 text-xs mt-8 sm:mt-12">
+            &copy; 2025 Escuela Infantil La Cucaña. Todos los derechos reservados.
+        </footer>
+    </main>
 
 </body>
 </html>
