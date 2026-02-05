@@ -111,7 +111,7 @@ document.querySelectorAll('.carousel-container').forEach(container => {
     setInterval(() => goTo((current + 1) % slides.length), 5000);
 });
 
-// Cookies
+/* // Cookies
 const banner = document.getElementById('cookie-banner');
 if (banner) {
     if (!localStorage.getItem('cookies-accepted')) {
@@ -125,3 +125,4 @@ if (banner) {
         banner.classList.add('translate-y-full');
     });
 }
+*/
