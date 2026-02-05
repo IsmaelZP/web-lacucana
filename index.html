@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Optimizado: Incluye Laredo, Guardería y Cantabria -->
     <meta name="description" content="Escuela Infantil y Guardería La Cucaña en Colindres, cerca de Laredo (Cantabria). Educación 0-3 años con metodología activa, huerto propio, comedor saludable y talleres para familias.">
     <meta name="keywords" content="guardería colindres, guardería treto,guardería cicero ,escuela infantil laredo, guardería laredo, educación infantil cantabria, escuela 0-3 años voto, la cucaña">
     <title>Escuela Infantil La Cucaña | Colindres y Laredo</title>
     
-    <!-- Favicon (Logo en la pestaña) -->
-    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="media/logo.png" type="image/png">
     
-    <!-- Quicksand Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS Configurado -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -45,67 +41,15 @@
         }
     </script>
     
-    <style>
-        body {
-            color: #334155;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .section-padding {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-        @media (min-width: 768px) {
-            .section-padding {
-                padding-top: 6rem;
-                padding-bottom: 6rem;
-            }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .waves-bg {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0 10 Q 25 0 50 10 T 100 10' fill='none' stroke='%231e3a8a' stroke-width='1' opacity='0.05'/%3E%3C/svg%3E");
-        }
-        
-        section {
-            scroll-margin-top: 80px;
-        }
-
-        /* FAQ Estilos simplificados (ya no es acordeón) */
-        .faq-item {
-            transition: all 0.3s ease;
-        }
-
-        .carousel-slide {
-            transition: opacity 1000ms ease-in-out;
-        }
-
-        #cookie-banner {
-            transition: transform 0.5s ease-in-out;
-        }
-        #cookie-banner.hidden-banner {
-            transform: translateY(100%);
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-white text-slate-700 selection:bg-brand-red selection:text-white">
 
-    <!-- Header / Navigation -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#" class="flex items-center gap-3 group">
-                <!-- LOGO HEADER -->
                 <div class="h-16 w-16 relative">
-                     <img src="logo.png" onerror="this.src='https://via.placeholder.com/150x150?text=LC'" alt="Logo La Cucaña" class="h-full object-contain group-hover:scale-105 transition-transform">
+                     <img src="media/logo.png" onerror="this.src='https://via.placeholder.com/150x150?text=LC'" alt="Logo La Cucaña" class="h-full object-contain group-hover:scale-105 transition-transform">
                 </div>
                 <span class="text-2xl font-bold text-navy tracking-tight hidden sm:block group-hover:text-brand-red transition-colors">La Cucaña</span>
             </a>
@@ -139,7 +83,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-blue-50 to-white pt-24 lg:pt-0">
         <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="space-y-8 reveal">
@@ -170,7 +113,7 @@
             <div class="relative reveal delay-200">
                 <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700 aspect-square border-8 border-white group">
                     <video autoplay muted loop playsinline class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000">
-                        <source src="get.mp4" type="video/mp4">
+                        <source src="media/hero.mp4" type="video/mp4">
                         Tu navegador no soporta video HTML5.
                     </video>
                 </div>
@@ -185,13 +128,12 @@
         </div>
     </section>
 
-    <!-- Sobre Nosotros -->
     <section id="nosotros" class="section-padding bg-white waves-bg">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 <div class="reveal relative order-2 lg:order-1">
                     <div class="absolute inset-0 bg-navy/5 rounded-[3.5rem] rotate-6 transform"></div>
-                    <img src="educadora.png" loading="lazy" alt="Educadora con niños" class="relative rounded-[3.5rem] shadow-2xl shadow-blue-900/10 z-10">
+                    <img src="media/educadora.png" loading="lazy" alt="Educadora con niños" class="relative rounded-[3.5rem] shadow-2xl shadow-blue-900/10 z-10">
                 </div>
                 <div class="space-y-8 reveal order-1 lg:order-2">
                     <div class="space-y-4">
@@ -221,7 +163,6 @@
         </div>
     </section>
 
-    <!-- Metodología -->
     <section id="metodologia" class="section-padding bg-white relative overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16 space-y-6 reveal">
@@ -265,7 +206,6 @@
         </div>
     </section>
 
-    <!-- El Laboratorio de los Sentidos (MODIFICADO: Carruseles individuales) -->
     <section id="actividades" class="section-padding bg-slate-50 relative overflow-hidden">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-12 items-center mb-16 reveal">
@@ -282,9 +222,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Actividad 1: Frío y Calor -->
                 <div class="group reveal rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
-                    <!-- Texto superpuesto estático -->
                     <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
                         <h3 class="text-white text-2xl font-bold mb-2">Frío y Calor</h3>
                         <p class="text-blue-100 text-sm">
@@ -294,15 +232,14 @@
                     
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
                 </div>
 
-                <!-- Actividad 2: Camino Sensorial -->
                 <div class="group reveal delay-100 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
                      <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
                         <h3 class="text-white text-2xl font-bold mb-2">Camino Sensorial</h3>
@@ -313,15 +250,14 @@
                     
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="camino1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="camino2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="camino3.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/camino1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/camino2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/camino3.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
                 </div>
 
-                <!-- Actividad 3: Arte y Texturas -->
                 <div class="group reveal delay-200 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
                      <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
                         <h3 class="text-white text-2xl font-bold mb-2">Arte y Texturas</h3>
@@ -332,16 +268,15 @@
                     
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="arte1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="arte3.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="arte4.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/arte1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/arte3.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/arte4.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- NUEVO: Call to Action Redes Sociales -->
             <div class="mt-16 text-center reveal">
                 <div class="bg-white rounded-[2rem] p-8 md:p-10 shadow-lg border border-slate-100 inline-block max-w-2xl w-full relative overflow-hidden group">
                     <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-50"></div>
@@ -364,7 +299,6 @@
         </div>
     </section>
 
-    <!-- Instalaciones y Servicios -->
     <section id="servicios" class="section-padding bg-soft-blue relative overflow-hidden">
         <div class="container mx-auto px-6">
             <div class="text-center mb-20 space-y-6 reveal">
@@ -374,15 +308,14 @@
             </div>
 
             <div class="space-y-24">
-                <!-- Feature 1 -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
                     <div class="relative order-2 lg:order-1 group">
                         <div class="absolute inset-0 bg-brand-red/5 rounded-[3rem] -rotate-3 transform translate-y-4"></div>
                         <div class="carousel-container relative rounded-[3rem] shadow-xl w-full h-80 lg:h-96 overflow-hidden bg-white">
                             <div class="carousel-slides relative w-full h-full">
-                                <img src="patio1.png" alt="Huerto" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                                <img src="huerto2.png" alt="Huerto 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                                <img src="patio.png" alt="Patio" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                                <img src="media/patio1.png" alt="Huerto" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                                <img src="media/huerto2.png" alt="Huerto 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                                <img src="media/patio.png" alt="Patio" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                             </div>
                             <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20"></div>
                         </div>
@@ -406,7 +339,6 @@
                     </div>
                 </div>
 
-                <!-- Feature 2 -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
                     <div class="order-1 lg:order-1 space-y-6">
                         <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-red shadow-sm text-3xl">🩺</div>
@@ -429,23 +361,22 @@
                          <div class="absolute inset-0 bg-navy/5 rounded-[3rem] rotate-3 transform translate-y-4"></div>
                         <div class="carousel-container relative rounded-[3rem] shadow-xl w-full h-80 lg:h-96 overflow-hidden bg-white">
                             <div class="carousel-slides relative w-full h-full">
-                                <img src="curso.png" alt="Curso" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                                <img src="curso2.png" alt="Curso 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                                <img src="media/curso.png" alt="Curso" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                                <img src="media/curso2.png" alt="Curso 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                             </div>
                             <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Feature 3 -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
                     <div class="relative order-2 lg:order-1 group">
                          <div class="absolute inset-0 bg-orange-100/50 rounded-[3rem] -rotate-3 transform translate-y-4"></div>
                         <div class="carousel-container relative rounded-[3rem] shadow-xl w-full h-80 lg:h-96 overflow-hidden bg-white">
                             <div class="carousel-slides relative w-full h-full">
-                                <img src="comida.png" alt="Comida" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                                <img src="comida2.png" alt="Comida 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                                <img src="comida3.png" alt="Comida 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                                <img src="media/comida.png" alt="Comida" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                                <img src="media/comida2.png" alt="Comida 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                                <img src="media/comida3.png" alt="Comida 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                             </div>
                             <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20"></div>
                         </div>
@@ -472,8 +403,7 @@
         </div>
     </section>
 
-<!-- Instalaciones Section (Aulas) - MODIFICADO: Carruseles individuales -->
-    <section id="instalaciones" class="section-padding bg-slate-50">
+<section id="instalaciones" class="section-padding bg-slate-50">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8 reveal">
                 <div class="space-y-4">
@@ -488,9 +418,7 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Aula 1 (Carrusel) -->
                 <div class="group reveal rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-80 relative">
-                     <!-- Texto superpuesto siempre visible encima del carrusel -->
                      <div class="absolute inset-0 pointer-events-none z-30 flex items-end p-8 bg-gradient-to-t from-navy/80 via-transparent to-transparent">
                         <div>
                             <span class="block text-brand-red font-bold text-sm mb-1 uppercase tracking-wider">0-1 Años</span>
@@ -500,18 +428,14 @@
                     
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <!-- Placeholder 2 -->
-                            <img src="aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <!-- Placeholder 3 -->
-                            <img src="aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
-                         <!-- Dots con z-index alto para estar sobre la imagen -->
-                        <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
+                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
                 </div>
 
-                <!-- Aula 2 (Carrusel) -->
                 <div class="group reveal delay-100 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-80 relative">
                      <div class="absolute inset-0 pointer-events-none z-30 flex items-end p-8 bg-gradient-to-t from-navy/80 via-transparent to-transparent">
                         <div>
@@ -521,15 +445,14 @@
                     </div>
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
                 </div>
 
-                <!-- Aula 3 (Carrusel) -->
                 <div class="group reveal delay-200 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-80 relative">
                      <div class="absolute inset-0 pointer-events-none z-30 flex items-end p-8 bg-gradient-to-t from-navy/80 via-transparent to-transparent">
                         <div>
@@ -539,9 +462,9 @@
                     </div>
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
@@ -550,8 +473,7 @@
         </div>
     </section>
 
-   <!-- FAQ Section (MODIFICADO: Sin acordeón) -->
-    <section id="faq" class="section-padding bg-white waves-bg">
+   <section id="faq" class="section-padding bg-white waves-bg">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-12 space-y-4 reveal">
                 <h2 class="text-4xl md:text-5xl font-bold text-navy">Preguntas Frecuentes</h2>
@@ -559,7 +481,6 @@
             </div>
 
             <div class="space-y-6">
-                <!-- FAQ Item 1 -->
                 <div class="faq-item border border-slate-200 bg-white shadow-sm hover:shadow-md rounded-3xl overflow-hidden p-8 reveal">
                     <h3 class="text-xl md:text-2xl font-bold text-navy mb-4">¿Cuáles son los horarios de la escuela?</h3>
                     <p class="text-slate-600 leading-relaxed text-lg">
@@ -567,7 +488,6 @@
                     </p>
                 </div>
 
-                <!-- FAQ Item 2 -->
                 <div class="faq-item border border-slate-200 bg-white shadow-sm hover:shadow-md rounded-3xl overflow-hidden p-8 reveal delay-100">
                     <h3 class="text-xl md:text-2xl font-bold text-navy mb-4">¿Disponéis de servicio de comedor?</h3>
                     <p class="text-slate-600 leading-relaxed text-lg">
@@ -575,7 +495,6 @@
                     </p>
                 </div>
 
-                <!-- FAQ Item 3 -->
                 <div class="faq-item border border-slate-200 bg-white shadow-sm hover:shadow-md rounded-3xl overflow-hidden p-8 reveal delay-200">
                     <h3 class="text-xl md:text-2xl font-bold text-navy mb-4">¿Cómo es el periodo de adaptación?</h3>
                     <p class="text-slate-600 leading-relaxed text-lg">
@@ -586,7 +505,6 @@
         </div>
     </section>
 
-    <!-- Social Proof -->
     <section id="testimonios" class="section-padding bg-soft-blue relative overflow-hidden">
         <div class="container mx-auto px-6 max-w-4xl relative z-10">
             <div class="text-center mb-16 space-y-4 reveal">
@@ -634,7 +552,6 @@
                 <div class="carousel-dots absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20"></div>
             </div>
 
-            <!-- NUEVO: Puntuación Google -->
             <div class="mt-10 reveal delay-200 flex flex-col items-center">
                  <div class="bg-white border border-slate-200 rounded-2xl px-8 py-4 shadow-sm flex items-center gap-4 mb-6">
                     <span class="text-5xl font-bold text-navy">4.7</span>
@@ -644,13 +561,11 @@
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <!-- Estrella parcial (70% rellena) para representar 4.7 -->
                             <svg class="w-5 h-5" viewBox="0 0 24 24">
                                 <defs>
                                     <linearGradient id="grad1">
                                         <stop offset="70%" stop-color="currentColor"/>
-                                        <stop offset="70%" stop-color="#cbd5e1"/> <!-- color slate-300 para la parte vacía -->
-                                    </linearGradient>
+                                        <stop offset="70%" stop-color="#cbd5e1"/> </linearGradient>
                                 </defs>
                                 <path fill="url(#grad1)" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                             </svg>
@@ -672,7 +587,6 @@
         </div>
     </section>
 
-    <!-- Contacto -->
     <section id="contacto" class="section-padding bg-white waves-bg relative overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
@@ -705,7 +619,6 @@
                                 <a href="mailto:escuelacucana@gmail.com" class="text-slate-500 font-bold hover:text-brand-red transition-colors">escuelacucana@gmail.com</a>
                             </div>
                         </div>
-                        <!-- Mapa Integrado (Ahora FUERA del div flex anterior para evitar que se encoja) -->
                         <div class="w-full h-64 rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 mt-6 reveal">
                              <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.2078652391054!2d-3.4501438234293046!3d43.39356617111516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4947970876176b%3A0xe37c95a639686e06!2sC.%20el%20Carmen%2C%2016%2C%2039750%20Colindres%2C%20Cantabria!5e0!3m2!1ses!2ses!4v1716120000000!5m2!1ses!2ses" 
@@ -722,7 +635,6 @@
                 </div>
 
                 <div class="bg-slate-50 p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100 reveal delay-200">
-                    <!-- Contenedor del Formulario -->
                     <div id="contact-form-container">
                         <form id="contact-form" class="space-y-6">
                             <div class="space-y-2">
@@ -754,15 +666,13 @@
                             </button>
                         </form>
                     </div>
-                    <!-- Mensaje de Éxito (Oculto inicialmente) -->
                     <div id="success-message" class="hidden text-center space-y-4 py-12 animate-fade-in">
                         <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto italic">✓</div>
                         <h3 class="text-2xl font-bold text-navy">¡Enviado con éxito!</h3>
                         <p class="text-slate-500">Gracias por contactar con La Cucaña. Nos pondremos en contacto contigo lo antes posible.</p>
                         <button onclick="window.location.reload()" class="text-navy font-bold border-b-2 border-navy">Volver al formulario</button>
                     </div>
-                     <!-- Mensaje de Error (Oculto inicialmente) -->
-                    <div id="error-message" class="hidden text-center space-y-4 py-12 animate-fade-in">
+                      <div id="error-message" class="hidden text-center space-y-4 py-12 animate-fade-in">
                         <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-4xl mx-auto font-bold">!</div>
                         <h3 class="text-2xl font-bold text-navy">Hubo un problema</h3>
                         <p class="text-slate-500">No hemos podido enviar tu mensaje. Por favor, revisa tu conexión o inténtalo más tarde.</p>
@@ -778,9 +688,8 @@
             <div class="grid md:grid-cols-3 gap-16 pb-16 border-b border-white/10">
                 <div class="space-y-6">
                     <div class="flex items-center gap-3">
-                         <!-- LOGO FOOTER GRANDE Y SIN TEXTO ADICIONAL -->
                          <div class="h-24 w-auto bg-white rounded-xl p-2 inline-block">
-                             <img src="logo.png" onerror="this.src='https://via.placeholder.com/150x150?text=LC'" alt="Logo La Cucaña" class="h-full w-auto object-contain">
+                             <img src="media/logo.png" onerror="this.src='https://via.placeholder.com/150x150?text=LC'" alt="Logo La Cucaña" class="h-full w-auto object-contain">
                          </div>
                     </div>
                     <p class="text-blue-100/70 text-base leading-relaxed max-w-sm">Vuestro segundo hogar en Colindres. Educando con el corazón y profesionalidad bajo la brisa del mar.</p>
@@ -801,7 +710,6 @@
                         <a href="https://www.facebook.com/lacucanaescuela/?locale=es_ES" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-brand-red hover:text-white transition-all text-blue-100">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
                         </a>
-                        <!-- Icono de Instagram Arreglado -->
                         <a href="https://www.instagram.com/lacucanacolindres/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-brand-red hover:text-white transition-all text-blue-100">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path></svg>
                         </a>
@@ -815,7 +723,6 @@
         </div>
     </footer>
 
-    <!-- Cookie Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white border-t p-6 z-50 flex flex-col md:flex-row items-center justify-between gap-6 transform translate-y-full transition-transform duration-500">
         <div class="flex-1">
             <h4 class="font-bold text-navy mb-1">🍪 Política de Cookies</h4>
@@ -827,130 +734,10 @@
         </div>
     </div>
 
-    <script>
-        // Header scroll
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
-                header.classList.remove('py-6');
-            } else {
-                header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
-                header.classList.add('py-6');
-            }
-        });
+    <script src="js/main.js"></script>
 
-        // Mobile menu
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    <script defer src="/_vercel/insights/script.js"></script>
 
-        // Reveal
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Form Submission (CONECTADO A FORMSPREE)
-        const contactForm = document.getElementById('contact-form');
-        const formContainer = document.getElementById('contact-form-container');
-        const successMessage = document.getElementById('success-message');
-        const errorMessage = document.getElementById('error-message');
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Estado de carga
-            btnText.innerText = "Enviando...";
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
-
-            const formData = new FormData(contactForm);
-            
-            try {
-                // Configurado con el ID: mykprbdn
-                const response = await fetch('https://formspree.io/f/mykprbdn', {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    formContainer.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
-                } else {
-                    // Si hay error en la respuesta (ej: 400, 500)
-                    console.error("Error en el envío");
-                    formContainer.classList.add('hidden');
-                    errorMessage.classList.remove('hidden');
-                }
-            } catch (error) {
-                // Si hay error de red (offline)
-                formContainer.classList.add('hidden');
-                errorMessage.classList.remove('hidden');
-            }
-        });
-
-        // Carousels (Generic Logic)
-        document.querySelectorAll('.carousel-container').forEach(container => {
-            const slides = container.querySelectorAll('.carousel-slide');
-            const dotsContainer = container.querySelector('.carousel-dots');
-            let current = 0;
-            
-            // Si no hay slides o solo hay 1, no activar lógica
-            if (!slides.length) return;
-
-            // Limpiar dots previos si existieran (útil si se regenera el DOM)
-            dotsContainer.innerHTML = '';
-
-            slides.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.className = `h-2 rounded-full transition-all ${i === 0 ? 'bg-navy w-6' : 'bg-navy w-2 opacity-30'} shadow-sm`;
-                dot.addEventListener('click', () => goTo(i));
-                dotsContainer.appendChild(dot);
-            });
-            
-            const dots = dotsContainer.querySelectorAll('button');
-
-            function goTo(idx) {
-                current = idx;
-                slides.forEach((s, i) => {
-                    s.classList.toggle('opacity-100', i === idx);
-                    s.classList.toggle('opacity-0', i !== idx);
-                    s.classList.toggle('z-10', i === idx);
-                });
-                dots.forEach((d, i) => {
-                    d.classList.toggle('w-6', i === idx);
-                    d.classList.toggle('w-2', i !== idx);
-                    d.classList.toggle('opacity-100', i === idx);
-                    d.classList.toggle('opacity-30', i !== idx);
-                });
-            }
-
-            // Auto-advance cada 5 segundos
-            setInterval(() => goTo((current + 1) % slides.length), 5000);
-        });
-
-        // Cookies
-        const banner = document.getElementById('cookie-banner');
-        if (!localStorage.getItem('cookies-accepted')) {
-            setTimeout(() => banner.classList.remove('translate-y-full'), 1000);
-        }
-        document.getElementById('accept-cookies').addEventListener('click', () => {
-            localStorage.setItem('cookies-accepted', 'true');
-            banner.classList.add('translate-y-full');
-        });
-        document.getElementById('reject-cookies').addEventListener('click', () => {
-            banner.classList.add('translate-y-full');
-        });
-    </script>
+    
 </body>
 </html>
