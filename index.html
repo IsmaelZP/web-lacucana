@@ -56,10 +56,10 @@
     <main class="max-w-4xl w-full text-center space-y-6 sm:space-y-8 animate-fade-in-up my-auto py-8 sm:py-0">
         
         <!-- Logo con animación suave y tamaño responsive -->
-        <div class="relative inline-block group mb-2 sm:mb-4">
+        <div class="relative inline-block group mb-2 sm:mb-0">
             <div class="absolute inset-0 bg-white/50 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
             <!-- Ajuste de tamaños: w-32 en móvil, w-40 en tablet, w-56 en escritorio -->
-            <img src="logo.png" onerror="this.src='https://via.placeholder.com/200x200?text=LC'" alt="Logo La Cucaña" class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 object-contain mx-auto animate-float drop-shadow-xl">
+            <img src="logo.png" onerror="this.src='https://via.placeholder.com/200x200?text=LC'" alt="Logo La Cucaña" class="relative w-48 h-48 sm:w-96 sm:h-96 md:w-96 md:h-96 object-contain mx-auto animate-float drop-shadow-xl">
         </div>
 
         <!-- Textos Responsive -->
@@ -83,13 +83,26 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-left">
                 <!-- Teléfono -->
-                <a href="tel:650553817" class="flex flex-row md:flex-col items-center p-3 sm:p-4 rounded-2xl hover:bg-blue-50 transition-colors group text-left md:text-center gap-4 md:gap-0">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-navy rounded-xl flex items-center justify-center text-xl sm:text-2xl md:mb-3 group-hover:scale-110 transition-transform shrink-0">📞</div>
-                    <div>
-                        <span class="block font-bold text-navy text-sm sm:text-base">Llámanos</span>
-                        <span class="block text-xs sm:text-sm text-slate-500">650 55 38 17</span>
+               <div class="flex flex-row md:flex-col items-center p-3 sm:p-4 rounded-2xl hover:bg-blue-50 transition-colors text-left md:text-center gap-4 md:gap-0 border border-transparent hover:border-blue-100">
+    
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-navy rounded-xl flex items-center justify-center text-xl sm:text-2xl md:mb-3 shrink-0">
+                        📞
                     </div>
-                </a>
+
+                    <div>
+                        <a href="tel:650553817" class="group/tel block">
+                            <span class="block font-bold text-navy text-sm sm:text-base group-hover/tel:text-brand-red transition-colors">Llámanos</span>
+                            <span class="block text-xs sm:text-sm text-slate-500 mb-1">650 55 38 17</span>
+                        </a>
+
+                        <a href="https://wa.me/34650553817" target="_blank" class="inline-flex items-center justify-center gap-1.5 px-2 py-0.5 rounded-full bg-green-50 text-green-700 hover:bg-green-100 hover:scale-105 transition-all cursor-pointer mt-1">
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.97 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z" />
+                            </svg>
+                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wide">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Email -->
                 <a href="mailto:escuelacucana@gmail.com" class="flex flex-row md:flex-col items-center p-3 sm:p-4 rounded-2xl hover:bg-blue-50 transition-colors group text-left md:text-center gap-4 md:gap-0">
