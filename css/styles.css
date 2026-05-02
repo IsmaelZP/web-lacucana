@@ -3,6 +3,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Espaciado de secciones adaptable */
 .section-padding {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -14,6 +15,7 @@ body {
     }
 }
 
+/* Animaciones de aparición (Reveal) */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -24,15 +26,17 @@ body {
     transform: translateY(0);
 }
 
+/* Fondo con patrón de ondas sutil */
 .waves-bg {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0 10 Q 25 0 50 10 T 100 10' fill='none' stroke='%231e3a8a' stroke-width='1' opacity='0.05'/%3E%3C/svg%3E");
 }
 
+/* Margen para el scroll suave (evita que el header tape el título) */
 section {
     scroll-margin-top: 80px;
 }
 
-/* FAQ Estilos simplificados (ya no es acordeón) */
+/* Transiciones elementos UI */
 .faq-item {
     transition: all 0.3s ease;
 }
@@ -41,9 +45,28 @@ section {
     transition: opacity 1000ms ease-in-out;
 }
 
+/* Banner Cookies (si se activa en el futuro) */
 #cookie-banner {
     transition: transform 0.5s ease-in-out;
 }
 #cookie-banner.hidden-banner {
     transform: translateY(100%);
+}
+
+/* MEJORA PUNTITOS CARRUSEL (Sobreescritura de estilos JS)
+   Cambiamos el azul oscuro por un azul muy claro/blanco para que resalte sobre las fotos.
+   Añadimos 'drop-shadow' para garantizar contraste si la foto es clara.
+*/
+.carousel-dots button {
+    background-color: #e0f2fe !important; /* Azul cielo muy claro (sky-100) */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.6); /* Sombra para contraste */
+}
+
+/* EXCEPCIÓN: SECCIÓN TESTIMONIOS
+   Como aquí el fondo es blanco, mantenemos el color azul oscuro original (#1e3a8a)
+   para que no desaparezcan.
+*/
+#testimonios .carousel-dots button {
+    background-color: #1e3a8a !important; /* Navy original */
+    box-shadow: none;
 }
