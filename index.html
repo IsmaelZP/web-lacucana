@@ -136,15 +136,21 @@
 
             <!-- Video Hero -->
             <div class="relative reveal delay-200">
-                <div class="relative z-0 rounded-[3rem] overflow-hidden shadow-2xl aspect-square border-8 border-white group">
-                    <video autoplay muted loop playsinline class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000">
+                <div class="relative z-0 rounded-[3rem] overflow-hidden shadow-2xl aspect-square border-8 border-white group bg-slate-50">
+                    
+                    <div class="absolute inset-0 flex flex-col items-center justify-center z-0">
+                        <div class="w-12 h-12 border-4 border-blue-100 border-t-navy rounded-full animate-spin mb-4"></div>
+                        <span class="text-sm text-navy/60 font-bold tracking-widest uppercase animate-pulse">Cargando aventura...</span>
+                    </div>
+
+                    <video autoplay muted loop playsinline class="relative z-10 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 bg-transparent">
                         <source src="media/intro.mp4" type="video/mp4">
                         Tu navegador no soporta video HTML5.
                     </video>
                 </div>
+                
                 <div class="absolute top-10 -right-4 lg:-right-10 z-[-1] w-32 h-32 bg-brand-red/10 rounded-full blur-3xl"></div>
             </div>
-        </div>
         
         <!-- Separador de onda (SVG) -->
         <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
@@ -276,26 +282,8 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
+                
                 <!-- Actividad 1 -->
-                <div class="group reveal rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
-                    <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
-                        <h3 class="text-white text-2xl font-bold mb-2">Frío y Calor</h3>
-                        <p class="text-blue-100 text-sm">
-                            Experimentamos con bloques de hielo y agua templada. Descubrimos los cambios de estado del agua.
-                        </p>
-                    </div>
-                    
-                    <div class="carousel-container relative w-full h-full">
-                        <div class="carousel-slides relative w-full h-full">
-                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                        </div>
-                        <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
-                    </div>
-                </div>
-
-                <!-- Actividad 2 -->
                 <div class="group reveal delay-100 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
                      <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
                         <h3 class="text-white text-2xl font-bold mb-2">Camino Sensorial</h3>
@@ -306,7 +294,7 @@
                     
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="media/camino1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/camino1.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
                             <img src="media/camino2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                             <img src="media/camino3.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
@@ -314,7 +302,7 @@
                     </div>
                 </div>
 
-                <!-- Actividad 3 -->
+                <!-- Actividad 2 -->
                 <div class="group reveal delay-200 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
                      <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
                         <h3 class="text-white text-2xl font-bold mb-2">Arte y Texturas</h3>
@@ -332,6 +320,25 @@
                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
                 </div>
+
+                <!-- Actividad 3 -->
+                <div class="group reveal rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all h-96 relative">
+                    <div class="absolute inset-0 pointer-events-none z-30 flex flex-col justify-end p-8 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent">
+                        <h3 class="text-white text-2xl font-bold mb-2">Frío y Calor</h3>
+                        <p class="text-blue-100 text-sm">
+                            Experimentamos con bloques de hielo y agua templada. Descubrimos los cambios de estado del agua.
+                        </p>
+                    </div>
+                    
+                    <div class="carousel-container relative w-full h-full">
+                        <div class="carousel-slides relative w-full h-full">
+                            <img src="media/hielo.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+
+                        </div>
+                        <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Bloque Social Media -->
@@ -427,7 +434,8 @@
                         <div class="carousel-container relative rounded-[3rem] shadow-xl w-full h-80 lg:h-96 overflow-hidden bg-white">
                             <div class="carousel-slides relative w-full h-full">
                                 <img src="media/curso.png" alt="Curso" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                                <img src="media/curso2.png" alt="Curso 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                                <img src="media/curso2.jpg" alt="Curso 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                                <img src="media/curso3.png" alt="Curso 2" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                             </div>
                             <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20"></div>
                         </div>
@@ -500,9 +508,9 @@
                     
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/aula0.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/Aula 0-1-1.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/Aula 0-1-2.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/Aula 0-1-3.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
                          <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
@@ -518,9 +526,9 @@
                     </div>
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/aula1.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/Aula 1-2-1.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/Aula 1-2-2.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/Aula 1-2-3.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
@@ -536,9 +544,9 @@
                     </div>
                     <div class="carousel-container relative w-full h-full">
                         <div class="carousel-slides relative w-full h-full">
-                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
-                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
-                            <img src="media/aula2.png" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/Aula 2-3-1.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 z-10">
+                            <img src="media/Aula 2-3-2.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="media/Aula 2-3-3.jpeg" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
                         </div>
                         <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-40"></div>
                     </div>
@@ -887,7 +895,7 @@
                 </div>
             </div>
             <div class="pt-8 text-center text-blue-100/40 text-xs font-medium tracking-wider uppercase flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>© 2025 Escuela Infantil La Cucaña. Todos los derechos reservados.</p>
+                <p>© 2026 Escuela Infantil La Cucaña. Todos los derechos reservados.</p>
                 <p>Hecho con ❤️ en Cantabria</p>
             </div>
         </div>
